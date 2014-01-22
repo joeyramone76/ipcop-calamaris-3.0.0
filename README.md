@@ -25,7 +25,8 @@ INSTALLATION
 - copy the files to your IPCop box (by using SCP or WinSCP) for example in /tmp/calamaris
 - login with ssh or Putty into your IPCop box as root and chdir to /tmp/calamaris or wherever you have upload the files
 - install Calamaris addon with the command:
--- ./install
+ 
+  ./install
 
 
 
