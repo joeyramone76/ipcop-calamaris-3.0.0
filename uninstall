@@ -4,12 +4,12 @@
 #
 # (c) 2014 umberto.miceli
 #
-# $Id: install-calamaris-ipcop,v 1.0 2005/12/02 00:00:00 marco.s Exp $
+# $Id: uninstall-calamaris-ipcop,v 3.0 2014/01/22 00:00:00 umberto.miceli Exp $
 #
 
 $scriptpath=substr($0,0,rindex($0,"/"));
 $swroot="/var/ipcop";
-$plroot="/var/ipcop";
+$plroot="/usr/lib/ipcop";
 $cgibin="/home/httpd/cgi-bin";
 $apdir="/var/ipcop/proxy/calamaris";
 
@@ -62,8 +62,8 @@ foreach $language (<$scriptpath/langs/*>)
 	$lastslashpos = rindex($language,"/");
 	$languagefile = substr($language,$lastslashpos+1);
 	print "$swroot/langs/$languagefile\n";
-	system("rm -f /var/ipcop/addons/lang/$languagefile";
-	
+	system("rm -f /var/ipcop/addons/lang/calamaris.$languagefile");
+}
 	
 	print "\nRebuilding language cache\n";
 	system("/usr/local/bin/rebuildlangtexts");
