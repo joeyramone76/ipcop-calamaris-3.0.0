@@ -28,6 +28,4 @@ INSTALLATION
 -- ./install
 
 
-NOTE
-====
-Under development - actually not for production server
+
