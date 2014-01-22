@@ -1,0 +1,169 @@
+#!/usr/bin/perl
+#
+# This code is distributed under the terms of the GPL
+#
+# (c) 2005-2008 marco.s http://calamaris.advproxy.net
+#
+# $Id: install-calamaris-ipcop,v 2.1 2008/03/10 00:00:00 marco.s Exp $
+#
+
+$scriptpath=substr($0,0,rindex($0,"/"));
+$swroot="/var/ipcop";
+$plroot="/usr/lib/ipcop";
+$cgibin="/home/httpd/cgi-bin";
+$apdir="/var/ipcop/proxy/calamaris";
+
+$update=0;
+$i=1;
+
+print "\n===================================================\n";
+print "  IPCop 2.0.6 Calamaris Proxy Report add-on install\n";
+print "===================================================\n\n";
+
+if (!(-e "$plroot/header.pl")) { die "ERROR: This system is not running IPCop.\n\n"; }
+
+if (!(-e "$plroot/general-functions.pl")) { die "ERROR: This system is not running IPCop 2.0.6 or higher.\n\n"; }
+
+if (-e "/usr/local/bin/calamaris") { $update=1; }
+
+
+print "Step $i: Creating directories\n";
+print "--------------------------------------------\n\n";
+
+print "$apdir\n";
+if (!(-d "$apdir")) { mkdir("$apdir") };
+
+print "$apdir/bin\n";
+if (!(-d "$apdir/bin")) { mkdir("$apdir/bin") };
+
+print "$apdir/reports\n";
+if (!(-d "$apdir/reports")) { mkdir("$apdir/reports") };
+
+print "/var/log/calamaris\n";
+if (!(-d "/var/log/calamaris")) { mkdir("/var/log/calamaris") };
+
+print "\n";
+$i++;
+
+
+print "Step $i: Copying Calamaris files\n";
+print "--------------------------------------------\n\n";
+
+print "$apdir/bin/calamaris\n";
+system("cp $scriptpath/calamaris-2.59/calamaris $apdir/bin/calamaris");
+system("chmod 755 $apdir/bin/calamaris");
+
+print "$apdir/bin/mkreport\n";
+system("cp $scriptpath/mkreport $apdir/bin/mkreport");
+system("chmod 755 $apdir/bin/mkreport");
+
+print "$cgibin/calamaris.cgi\n";
+system("cp $scriptpath/calamaris.cgi $cgibin/calamaris.cgi");
+system("chmod 755 $cgibin/calamaris.cgi");
+
+print "$apdir/version\n";
+open FILE, ">$apdir/version";
+print FILE "3.0.0";
+close FILE;
+
+system("touch -t 200801010000 $apdir/.up2date");
+
+print "\n";
+$i++;
+
+
+print "Step $i: Setting ownerships\n";
+print "--------------------------------------------\n\n";
+
+print "Setting ownership and permissions\n";
+system("chown -R nobody:nobody $apdir");
+system("chown -R nobody:nobody /var/log/calamaris");
+
+print "\n";
+$i++;
+
+
+print "Step $i: Patching system files\n";
+print "--------------------------------------------\n\n";
+
+print "Patching language files:\n";
+
+if ($update == 1)
+{
+	foreach $language (<$scriptpath/langs/*>)
+	{
+		undef(@calamarisstrings);
+		undef(@ipcopstrings);
+		$lastslashpos = rindex($language,"/");
+		$languagefile = substr($language,$lastslashpos+1);
+		open(FILE,"$swroot/langs/$languagefile");
+		@calamarisstrings = <FILE>;
+		close(FILE);
+		foreach $line(@calamarisstrings)
+		{
+			if (!($line =~ /calamaris/i))
+			{
+				push(@ipcopstrings, $line);
+			}
+		}
+		open(FILE,">$swroot/langs/$languagefile");
+		print FILE @ipcopstrings;
+		close(FILE);
+	}
+}
+
+foreach $language (<$scriptpath/langs/*>)
+{
+
+        undef(@calamarisstrings);
+        undef(@ipcopstrings);
+	$lastslashpos = rindex($language,"/");
+	$languagefile = substr($language,$lastslashpos+1);
+	print "$languagefile\n";
+	open(FILE,$language);
+	@calamarisstrings = <FILE>;
+	close(FILE);
+	push(@calamarisstrings,");\n");
+
+#	open(FILE,"$swroot/langs/$languagefile");
+#	@ipcopstrings = <FILE>;
+#	close(FILE);
+##	do {
+#		$n=@ipcopstrings;
+#		$line=$ipcopstrings[$n-1];
+#		pop(@ipcopstrings);
+#	} until ($line =~ /\);/);
+#	push(@ipcopstrings,@calamarisstrings);
+#	open(FILE,">$swroot/langs/$languagefile");
+#	print FILE @ipcopstrings;
+#	close(FILE);
+
+	if (-d "$swroot/addons/lang")
+	{
+		open(FILE,$language);
+		@calamarisstrings = <FILE>;
+		close(FILE);
+		open(FILE,">$swroot/addons/lang/calamaris.$languagefile");
+		print FILE "# Start Calamaris language definition\n";
+		print FILE "\%tr=(\%tr,\n";
+		print FILE @calamarisstrings;
+		print FILE ");\n";
+		print FILE "# End Calamaris language definition";
+		close(FILE);
+	}
+}
+
+if (-d "$swroot/addons/lang")
+{
+	print "\nRebuilding language cache\n";
+	system("/usr/local/bin/rebuildlangtexts");
+
+}
+
+print "\n";
+
+print "Patching IPCop main menu\n";
+# Update Menu
+system("/usr/local/bin/updatemenu.pl");
+
+print "\n";

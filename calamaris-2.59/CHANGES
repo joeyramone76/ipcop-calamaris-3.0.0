@@ -1,0 +1,1206 @@
+2004-06-06 18:29  cord
+
+	* README (2.43):
+	  * documented a problem with Logfiles from accelerated proxies.
+	  (reported by Pawel Worach <pawel.worach@nordea.com>)  * added a
+	  feature Request     (requested by Ahjmad Kamal <eng_ak@link.net>)
+
+2004-06-06 18:26  cord
+
+	* calamaris (2.59):
+	  * added 2004 to year-lines * changed Michael Pophals Mailadress *
+	  added sanity-check for time-interval-option	  (Michael Pophal
+	  <michael.pophal@nefkom.net>) * changed interval-display
+	  (Michael Pophal <michael.pophal@nefkom.net>) * added x-hiername
+	  for NetCache-Logparsing.	(Peter W. Osel <pwo@Infineon.COM>)
+	  * added fix for iPlanet Web Proxy Server     (Pawel Worach
+	  <pawel.worach@nordea.com>) * moved CARP from HIT to MISS section
+	  (Michael Pophal <michael.pophal@nefkom.net>) * added a
+	  generation time stamp and reformatted Text-Output-Header.
+	  (Michael Pophal <michael.pophal@nefkom.net>)
+
+2004-03-02 21:17  cord
+
+	* EXAMPLES (2.12):
+	  * added a suggestion from Alain Williams <addw@phcomp.co.uk> for
+	  a shorter and   easier catting of Logfiles.  * fixed Gottfried
+	  Hamms squidrep-example. Fixes sent in by Hanno 'Rince'   Wagner
+	  <wagner@rince.de>.
+
+2003-05-14 23:22  cord
+
+	* calamaris.1 (1.28):
+		  * added new -M-switch.
+		  * fixed some -m and -w examples, they are replaced by -F
+	  in the last
+		    version.
+		  * bumped refered Calamaris Version.
+
+2003-05-14 23:13  cord
+
+	* calamaris (2.58):
+		  * added a -M (Meta) switch to add free defined strings to
+	  html-<HEAD>.
+		    This switch may be useful to provide stylesheets to the
+	  html-report.
+		    (suggested by ycdtosa ? <ycdtosa@eupla.unizar.es>)
+		  * Heavy tested and fixed problems with 'Division by
+	  zero'-errors (with
+		    broken logfiles caused by bugs of some Proxyservers.)
+	  (reported by
+		    Chris Knight <chris@aims.com.au>) While fixing those
+	  problems i
+		    removed the .00..001 workarounds with a correct
+	  solution.
+		  * found that .ru (Russia) now mainly uses 2nd-level
+	  domains, so i
+		    removed that from the 3rd-level-group of
+	  TopLevelDomains.
+		  * fixed warnings in HTML-Output, so now that will also be
+	  correct
+		    HTML.
+
+2003-05-14 23:00  cord
+
+	* README (2.42):
+		  * Clarified the RedHat-Bug a bit (triggered by a bug
+	  report from
+		    Massimo Carnevali <lec3748@iperbole.bologna.it>)
+
+2003-02-09 01:06  cord
+
+	* calamaris.1 (1.27):
+		  * added the new -F-switch and pulled the -w, -m,
+	  -W-switches.
+		  * cleaned up a little.
+		  * bumped referenced version to 2.57
+
+2003-02-09 00:55  cord
+
+	* calamaris (2.57):
+		  * Holger Marzen <holger@marzen.de> requested an
+	  output-format which he
+		    can use to parse afterwards. -F unformatted is the
+	  result.  if you
+		    use -F unformatted along with -U, the byte values are
+	  calculated in
+		    the given Unit, and displayed without indication along
+	  with the
+		    numbers. the indication moves up to the header of the
+	  report.
+		  * as announced in the README i converted -m -w and -W
+	  also into the
+		    new -F-switch. so you now have to use -F mail, -F html
+	  and -F
+		    html-embed. For now the old switches will still work,
+	  but Calamaris
+		    puts out warnings about that. The switches defunct in
+	  the first
+		    release of '04.
+		  * I deleted (as scheduled) a warning about -N f which has
+	  been
+		    replaced by -N -1
+		  * I pushed back removal schedules for
+	  Cachefile-Workarounds to the end
+		    of the year.
+		  * code-cleanup.
+
+2003-02-09 00:06  cord
+
+	* README (2.41):
+		  * removed note about pending changes in the
+	  output-options.
+
+2003-02-08 23:57  cord
+
+	* EXAMPLES (2.11):
+	   * changed the examples to the new output-switch syntax
+
+2003-01-19 20:47  cord
+
+	* calamaris (2.56):
+		  * fixed a bug in error-check for obsolete input-formats.
+
+2003-01-19 17:58  cord
+
+	* calamaris.1 (1.26):
+		  * reflect the chneges in input-formats in the manpage.
+		  * bumped refered Calamaris-Version-number
+		  * added 2003 to the copyright
+
+2003-01-19 17:57  cord
+
+	* calamaris (2.55):
+		  * replaced 'squid-mime' and 'squid-smartfilter' input
+	  formats with
+			  'squid-extended' which is also usable for Cisco
+	  Content
+			  Engines Logfiles.  (initial patch from Kenytt
+	  Avery
+			  <kavery@willingminds.com>)
+		  * added an error for users of the replaced input formats.
+		  * fixed parsing of NetCache NetApp/5.2 Logfiles. (patch
+	  by SO Kwok
+			  Tsun <ktso@cuhk.edu.hk>)
+		  * added 2003 to the copyright-notice
+		  * added/changed <> to all mailadresses
+
+2003-01-19 17:52  cord
+
+	* README (2.40):
+		  * added Cisco Content Engines
+		  * added <> to all mailadresses
+		  * modified the SmartFilter-comment
+		  * added a wishlist-item 'limit reports to a minimum
+	  number of
+			  transactions' requested by Franck Bourdonnec
+			  <fbourdonnec@chez.com>
+
+2003-01-19 17:50  cord
+
+	* EXAMPLES (2.10):
+		  * added <> to all mailadresses.
+
+2002-11-23 18:53  cord
+
+	* calamaris (2.54):
+		  * fixed small bug with new option.
+
+2002-11-23 18:38  cord
+
+	* calamaris.1 (1.25):
+		  * added new Time-Interval-Option.
+		  * bumped version-number for calamaris
+
+2002-11-23 18:37  cord
+
+	* README (2.39):
+		  * added a comment regarding a RedHat 8.0-Problem.
+		  * changed comment about SmartFilter.
+		  * removed wishlist-item Timerange.
+
+2002-11-23 18:35  cord
+
+	* calamaris (2.53):
+		  * added an Time-Range-Interval (first suggested by
+	  Steffen Sledz
+			  (sledz@zone42.org))
+		  * rewrote internal-help-information.
+
+2002-08-28 18:58  cord
+
+	* calamaris (2.52):
+		  * re-added cache-bug workarounds.
+		  * added warnings for the reports, so everyone could know
+	  about
+		    problems with old cache-files.
+		  * fixed a perl-warning which appears in ascii-reports
+	  error-section
+		    (found by Michael Pophal (michael.pophal@siemens.com))
+		  * moved the error-section to the top of the report. It
+	  now also
+		    produces a valid HTML-Table.
+
+2002-08-28 18:54  cord
+
+	* README (2.38):
+		  * spelling fixes.
+		  * added a note about (not) announcing spy-features.
+		  * re-added the statement about fixed cache-bugs.
+		  * added a workaround for broken SmartFilter-Logfiles.
+
+2002-08-02 22:15  cord
+
+	* calamaris (2.51):
+		  + fixed a bug in cache-file-writing. other-lines in
+	  host-related
+		    sub-reports in the requester-reports were put out with
+	  a
+		    missing field, which makes it impossible to read them
+	  in
+		    again.  However:  this part of the reports is not the
+	  default
+		    so this won't hit many users. I put a workaround in,
+	  which
+		    normally should recover 'broken' cachefiles without
+	  data-loss.
+		    (This one is reported by Radu - Eosif Mihailescu
+		    (rmihailescu@lumina.ro))
+		  + removed some old bug-workarounds.
+		  + moved the Error-report to the Top of the reports.
+
+2002-08-02 22:06  cord
+
+	* README (2.37):
+		  + removed note about a workaround. which is now removed
+		    from the source.
+
+2002-06-10 21:48  cord
+
+	* calamaris.1 (1.24):
+		  + reflected change in -N-switch from f to -1
+		  + bumped version Number to 2.50
+
+2002-06-10 21:46  cord
+
+	* calamaris (2.50):
+		  + fixed a problem with the new -N-switch.
+		    changed the f-value to -1 to make it more consistent
+		    to the other switches.
+		  + enabled IPv6-IPs.
+		    Calamaris now accepts IPv6-Ips and is able to resolve
+		    encapsulated IPv4-Ips.
+
+2002-06-10 21:41  cord
+
+	* README (2.36):
+		  + changed comment on IPv6: Calamaris cannot resolve real
+		    IPv6-IPs yet.
+
+2002-06-05 19:46  cord
+
+	* README (2.35):
+		  + added a statement about the net-yet supported IPv6
+		  + added plan to change output-options.
+
+2002-06-05 19:34  cord
+
+	* calamaris.1 (1.23):
+		  + added new -W-option.
+		  + bumped calamaris-version-number.
+
+2002-06-05 19:31  cord
+
+	* calamaris (2.49):
+		  + fixed a bug with %-signs in the url, which Calamaris
+	  tried to expand
+		    internal. (reported by Sergey Zarubin
+	  (serge-home@yandex.ru))
+		  + Helge Oldach (calamaris@oldach.net) submitted a patch
+	  which fixes a
+		    problem with syntactical-wrong html-output, and also
+	  added a
+		    -W-switch to produce HTML-Output without HTML-Headers,
+	  so it can
+		    used for Server-Side-Includes.
+
+2002-05-29 22:13  cord
+
+	* calamaris.1 (1.22):
+		  + changed 3rd-level to N-level-reports.
+		  + bumped calamaris-version to 2.48.
+
+2002-05-29 22:10  cord
+
+	* calamaris (2.48):
+		  + changed -3-switch to -N, which makes it possible for
+	  the user to
+		    define how many levels of URL-Hosts should be
+	  displayed. -Nf
+		    displays all Host-Components. (requested by Mark
+	  Güthling
+		    (privat@mague-pcservice.de))
+		  + changed behaviour when wrong switches are submitted.
+	  Now there will
+		    be only a one-line hint will be displayed.
+
+2002-05-23 22:26  cord
+
+	* calamaris (2.47):
+	    + fixed problem with dynamic help, which happened if Calamris
+	  is run without
+	      -a or -P-option. (reported by Steve Snyder
+	  (swsnyder@home.com))
+	    + fixed bug with -m -option. Mail-Subject wasn't printed out in
+	  the correct
+	      order. (reported by Philipp Frauenfelder
+	      (philipp.frauenfelder@swissonline.ch))
+	    + found a problem with 'Incoming TCP-requests by status'. It
+	  wasn't
+	      displayed if all requestes were classified as ERROR. (found
+	  with the help
+	      of Alexey Markov (markov@crpi.ru))
+	    + concentrated some Regexps.
+	    + cleaned even more up ;-)
+
+2002-05-17 22:49  cord
+
+	* calamaris.1 (1.21):
+	  + added documentation for the new -S and -3 options.	+ bumped
+	  referenced Calamaris-Version-Number.	+ cleaned up.
+
+2002-05-17 22:47  cord
+
+	* calamaris (2.46):
+	  + added third-level-switch (requested by Shawn Switenky
+	  (S.Switenky@telesat.ca)) + added seperate on/off-switching and
+	  sorting for all reports (requested by    Jarkko Saloranta
+	  (jjs@kpo.fi) a long time ago, and Jigar Rasalawala
+	  (jrasalawala@fourelle.com)) + bugfixed Netscape-Proxy-Logfiles.
+	  The months were off-by-one.  + cleaned up. made Calamaris better
+	  perl?! ;-)
+
+2002-05-17 22:33  cord
+
+	* README (2.34):
+	  + added Squid with SmartFilter-Patch to the supported Logfiles +
+	  added a statement about broken Squid-Smartfilterpatch-Logfiles.
+	  + added a statement for 0-0-bytes lines in the distribution
+	  histogram + removed wishlist item 'seperate on/off switching of
+	  incoming  UDP/TCP-Requests' + removed wishlist item 'n-level
+	  requester report'
+
+2002-05-17 22:30  cord
+
+	* EXAMPLES (2.9):
+
+	  + cleaned up a little bit.
+
+2002-01-25 22:25  cord
+
+	* calamaris.1 (1.20):
+	  - added 'squid-smartfilter'-Input-Format.  - bumped
+	  Version-Number to 2.45
+
+2002-01-25 22:24  cord
+
+	* calamaris (2.45):
+	  - added 'squid-smartfilter' input format (thanks to James Crocker
+		(jcrocker@menasha.com)) - fixed/added the new Netcache
+	  V5.2-Logfile-Support (thanks to Enrico   Ardizzoni
+	  (enrico@unife.it)) - added warnings and workarounds to the
+	  'eating-all-memory'-problem in     peak-reports (thanks to John
+	  Line (webadm@info.cam.ac.uk)) - corrected order of shorcuts in
+	  HTML-output.
+
+2002-01-25 22:19  cord
+
+	* README (2.33):
+	  - changed notes about peak-reports and unsorted input - removed
+	  note about Calamaris eating up all memory, as that problem is
+	  found     and fixed.
+
+2002-01-18 19:29  cord
+
+	* calamaris.1 (1.19):
+	  - added documentation about the Debug-switch -L
+
+2002-01-18 19:28  cord
+
+	* calamaris (2.44):
+	  - fixed a bug in the new -D-option. now you should be able to set
+	  it yourself.		(fix by John Line (webadm@info.cam.ac.uk))
+
+2002-01-18 19:27  cord
+
+	* README (2.32):
+	  - removed the part about a probably buggy input-file guessing
+	  from the  Bug-section. It's in there for months and nobody
+	  complained	 about it.  - added a notice about a possible bug
+	  somewhere else, causing Calamaris	 to eat all your Memory.
+	  Reason unknown yet. Hints welcome.	  (reported by John Line
+	  (webadm@info.cam.ac.uk))
+
+2002-01-17 22:04  cord
+
+	* calamaris.1 (1.18): * added -D-option.  * clarified
+	  NetCache-Versions.  * fixed typo.  * bumped Version-Number for
+	  Calamaris * extended Copyright notice.
+
+2002-01-17 21:55  cord
+
+	* calamaris (2.43): * expanded Copyright-Notice. Hey! Calamaris is
+	  5 years old! * added a new report about size-based Distribution
+	  of objects. (suggested by    Gerold Meerkoetter
+	  (gerold@noc.fh-lippe.de)) * the -a-switch contains the new switch
+	  -D * clarified NetCache-Versions. (thanks to Stephane Lentz
+	  (Stephane.Lentz@ansf.alcatel.fr)) * added a -L-switch for
+	  debugging purposes (idea by Matt Hubbard
+	  (m.hubbard@ic.ac.uk)) * fixed 'gt' vs. > -bug in invalid counter
+	  (first reported by Gerold	 Meerkoetter
+	  (gerold@noc.fh-lippe.de)) * also fixed about 10 more similar bugs
+	  (maybe now i can remember when which	    is correct?) * added
+	  'cs-username' as possible ident-content and cs(X-Forwarded-For)
+	  to	     ignore in elff-format. (patch by Matt Hubbard
+	  (m.hubbard@ic.ac.uk)) * quoted unquoted POST.
+
+2002-01-17 20:46  cord
+
+	* README (2.31): * added NetCache V5.x to the supported Proxies.  *
+	  added wishlist-item about a timerange-option. (suggested by
+	  Steffen Sledz   <sledz@zone42.org>)
+
+2002-01-17 20:42  cord
+
+	* COPYRIGHT (2.2): The FSF (in person of Janet Casey) pointed out,
+	  that the 'How to Apply These Terms to Your New Programs' is a
+	  part of the GNU GPL. So i corrected this now.
+
+2001-08-12 17:19  cord
+
+	* calamaris (2.42): calamaris: * fixed a bug in Logfile-guessing
+
+2001-03-24 22:40  cord
+
+	* calamaris (2.41):
+	  * fixed bug in cache-reading routines witn unquoted keys. (noted
+	  by Elrond   (elrond@Wunder-Nett.org)) * added support for NetApp
+	  NetCache V (thanks to Christian Niederdorfer
+	  (christian.niederdorfer@infineon.com) for providing logfiles,
+	  testing   and also for the donmation. Thank You.) * fixed a bug
+	  in cache-reading of Requesters. (fixed by Klaus Brinkmeyer
+	  (Klaus_Brinkmeyer@inasys.de)) * corrected indentation * added
+	  2001 to the copyright. (uh, since 1997. Calamaris is 4 now.) *
+	  added a warning to the output if more that 5% of the input lines
+	  are	unparsable.
+
+2001-03-24 22:27  cord
+
+	* README (2.30):
+	  * changed Link to Inktomi Proxy * added 'NetApp NetCache V' to
+	  the supported Proxies.  * overworked pointers to deb/rpm and
+	  *BSD-Ports.
+
+2000-10-27 15:52  cord
+
+	* calamaris.1 (1.17):
+	  * added 'nse' (Netscape Extended Logfile-Format) to the manpage.
+	  * added a workaround-hint for reusing cache-files * the manpage
+	  now described V2.40 and later of calamaris
+
+2000-10-27 15:50  cord
+
+	* calamaris (2.40):
+	  * improved Netscape Extended-1/2 Logfile Format support * fixed a
+	  seldom occuring problem with some perl-versions (reported by
+	  Stephen Welker (stephen.welker@nemostar.com.au))
+
+2000-10-27 15:48  cord
+
+	* README (2.29):
+	  * added Netscape/iplanet Web Proxy Server to the supported
+	  servers.  * added a pointer with a workaround to a problem with
+	  reusing cache-files.	  (problem noted by Clare Lahiff
+	  (clare@tarboosh.anu.edu.au))
+
+2000-10-27 15:42  cord
+
+	* EXAMPLES (2.8):
+	  added an EXAMPLE for usage of caching taken from the
+	  Debian-package (written by Philipp Frauenfelder
+	  (pfrauenf@debian.org))
+
+2000-10-12 19:14  cord
+
+	* calamaris (2.39): fixed the unit-bug again.
+
+2000-10-12 19:03  cord
+
+	* calamaris.1 (1.16): changed the pointer to the Calamaris Version.
+
+2000-10-12 19:03  cord
+
+	* calamaris (2.38): fixed a bug regarding units on byte values.
+
+2000-09-18 19:25  cord
+
+	* calamaris (2.37):
+	  * fixed a bug with undefined variable
+
+2000-09-18 19:20  cord
+
+	* calamaris (2.36), calamaris.1 (1.15):
+	  * added a -U -option to define the Unit used on the Byte-stats.
+	  (suggested by Steven Snyder (Steven_Snyder@3com.com))
+
+2000-09-14 19:15  cord
+
+	* calamaris (2.35):
+	  * added Novell ICS to -f elff-help.  * we get $log_url now from
+	  cs-uri-stem instead of cs-uri in elff-logs.  * added
+	  cs(Referer)-field for elff.
+
+	  all reported and patched by Ram Cherukuri (ram@edgix.com)
+
+2000-09-14 19:08  cord
+
+	* README (2.28): added link for Novell Internet Caching System
+
+2000-09-02 22:36  cord
+
+	* calamaris (2.34):
+	  * fixed a bug in Logfile-guessing.  * added alpha-quality support
+	  for Netscape-Extend-1/2 Logfiles.
+
+2000-09-02 22:34  cord
+
+	* README (2.27):
+	  added a statement.
+
+2000-06-24 16:00  cord
+
+	* calamaris.1 (1.14):
+	  * changed default for -a to -r 20 * added -R-Option.	* added a
+	  new Section 'PRIVACY'
+
+2000-06-24 14:56  cord
+
+	* calamaris (2.33):
+	  * changed the one-line description.  * changed the -a option to
+	  -r 20.  * added -R-option to extend -r to report targets.  *
+	  removed cts (Compaq Tasksmart)-Logformat.  * added elff (Extended
+	  Logfile Format)-Logformat.  * corrected help about -T * added
+	  another pointer to privacy-problems to help.
+
+2000-06-24 14:44  cord
+
+	* README (2.26):
+	  * checked referenced documents and corrected them where
+	  nessecary.  * changed 'Which formats are supported?' to   'Which
+	  software can produce Calamaris-parseable Logfiles?' * changed
+	  'How to use it?' from Squid-specific to a more general
+	  description. and added a pointer to Extended Logfile Format.	*
+	  removed some pointers to known problems as nobody noted these for
+	  longer than a year.  * added a harsh comment about (mis-?)using
+	  Calamaris to break the   privacy of users.  * removed the comment
+	  about not adding privacy-breaking functions.
+
+2000-06-22 12:58  cord
+
+	* calamaris.1 (1.13):
+	  * changed short description.	* added all known Caches which can
+	  produce Calamaris-parseble logs.  * changed the -f Default.  *
+	  corrected -T description.
+
+2000-06-22 12:06  cord
+
+	* calamaris (2.32): * added support for 'Oops', a forking
+	  Squid-relative.  * added support for Compaq Tasksmart.  * changed
+	  guessing messages.  * made guessing the default.
+
+2000-06-22 12:00  cord
+
+	* README (2.25):
+	  * added a new section 'Which formats are supported?' * changed
+	  the comment on Logfile-guessing.  * removed 'Compaq Cache' from
+	  wishlist.
+
+2000-05-25 19:44  cord
+
+	* EXAMPLES (2.7): fixed a small bug in Thomas Wahyudis Example
+	  (noted by himself)
+
+2000-05-24 23:34  cord
+
+	* README (2.24): added a note about the to come support of Compaq
+	  Cache
+
+2000-05-24 23:31  cord
+
+	* calamaris (2.31): * added a new hierarchie-method of Inktomi
+	  Traffic Server -->	   EMPTY (patched by Warren Brown
+	  (wbrown@inktomi.com))
+
+2000-05-24 23:18  cord
+
+	* EXAMPLES (2.6): * added another example provided by Thomas
+	  Wahyudi (thomas@home.unpar.ac.id)
+
+2000-05-13 22:06  cord
+
+	* calamaris.1 (1.12): * added descriptions for the new logfile
+	  formats.  * added descriptions for -T, -c and -v * changed -c and
+	  -v to -C and -V.  * manpage now reflects V2.30 and above.
+
+2000-05-13 22:03  cord
+
+	* calamaris (2.30): * corrected Dancer Vesperman's credit.  * added
+	  a new logfile-type for Inktomi Traffic Server. (reported by
+	  Michael Smith (good_guy93@hotmail.com) * added a pseudo logfile
+	  type 'auto' which let's Calamaris guess	  what logfile is
+	  read. (still beta, please test) * added a verbose switch, (but it
+	  didn't do more yet as 	displaying which kind of logfile is
+	  guessed, maybe i    should move the -b-switch in here?) * added a
+	  switch which enables correcting the Performance Report    to a
+	  specific timezone. (noted by Holger Marzen (hm@sik-gmbh.de) *
+	  added a switch to make the file-extensions report
+	  case-insensitive.	     (requested by Steve Snyder
+	  (swsnyder@home.com)  * changed the copyright switch from -c to
+	  -C.  * changed the version switch from -v to -V.  * changed the
+	  output of byte values: now all output is in Byte (not KByte
+	  anymore) if the space in the output would cut off something
+	  Calamaris will switch to KByte, MByte, GByte and TByte (I think
+		this is enough ;-) indicating this by appending a K, M, G
+	  or T to	the value. I saved a digit in the output here and
+	  gave it to the	requests. (a problem with this is reported
+	  by Panagiotis Christias      (P.Christias@noc.ntua.gr)
+
+2000-05-13 21:01  cord
+
+	* README (2.23): * Removed a hint for very old browsers.  * Added a
+	  HELP REQUEST according the new Logfile-guessing.  * Changed the
+	  comment on Common Logfile-Format.  * Added a reply to the many
+	  requests about more user tracking with Calamaris.
+
+2000-05-13 20:56  cord
+
+	* EXAMPLES (2.5): * added an example provided by Gottfried Hamm
+	  (ghamm@ghks.de)
+
+1999-12-16 23:56  cord
+
+	* calamaris (2.29): * Bugfix to 2.28.
+
+1999-09-25 14:33  cord
+
+	* calamaris (2.28): * the benchmark option gives now hash-signs
+	  which were written to STDERR. 	 (patch provided by Gerold
+	  Meerkoetter (gerold@noc.fh-lippe.de))  * all warn-calls were
+	  replaced by print to STDERR, so get rid of the
+	  automagically apended line-numbers.  * now Calamaris checks the
+	  syntax of Logfilelines a little more, because lines	      such
+	  as 'if needed, or if running Squid for the first time.' lead to
+		strange errors. A correct line has to have a date-field
+	  with the	   syntax \d+\.\d\d\d (reported by Gerold
+	  Meerkoetter	      (gerold@noc.fh-lippe.de)) * if
+	  ident-information parsing is activated, but there isn't an
+	  ident-information available now the ouput is without the leading
+	  '-@'. 	 (patch by Chris Teakle (ccteakle@its.uq.edu.au))
+	  * added new hierarchie-method 'ANY_PARENT'.  * added a small
+	  invisible Y2K-fix. Now Calamaris uses internal the correct
+	  4-digit-year. However Calamaris only prints 2-digit-years because
+	  i	want to produce lines which were max. 79 chars long. (patch
+	  by Toni     Andjelkovic (toni@telecom.at))
+
+1999-09-25 11:47  cord
+
+	* README (2.22): * Feature request added: n-level requester report.
+	  (suggested by Jarkko	      Saloranta <jjs@kpo.fi>)
+
+1999-06-08 21:48  cord
+
+	* calamaris (2.27): fixed parsing of squid-mime Logfiles.
+
+1999-06-05 14:31  cord
+
+	* calamaris (2.26): * changed the 'require 5' to 'require 5.002'
+	  because of vars.pm. (pointed out	 by Jonas Luster
+	  (jonas@nethammer.qad.org)) * fixed a bug regarding 'Outgoing
+	  requests by destination' where the	     approximate request
+	  time was calculated wrong for the Status-lines.     (Clare Lahiff
+	  (Clare.Lahiff@anu.edu.au) reported this bug.)
+
+1999-05-11 20:22  cord
+
+	* calamaris (2.25), calamaris.1 (1.11): * added a new input-format
+	  'squid-mime' for log_mime_hdrs-enhanced Squids.
+
+1999-05-01 21:01  cord
+
+	* calamaris (2.24): * added a new kind of ERROR from NetCache
+	  (reported by Ryan Donnelly) * changed the unknown log_hier_method
+	  -error, because many people simply sent	  the output to me,
+	  without thinking if the bug could be somewhere else	(corrupted
+	  Logfile) or fixed in a later release.  * cleaned up the
+	  HTML-Output (suggested and patch by Christos Cheretakis)
+	  because better HTML will be rendered faster (and weblint is now
+	  also	  happy ;-)
+
+1999-05-01 20:55  cord
+
+	* README (2.21): * clarified Mailinglist-Subcription.  * changed
+	  link to FreeBSD-Port.  * added a point to 'bugs and shortcomings
+	  regarding corrupted Logfiles.
+
+1999-04-02 17:19  cord
+
+	* README (2.20): * added a confirmation-request on wrong
+	  SSL-Request parsing.	* added a suggestion from John Line
+	  <webadm@info.cam.ac.uk>) about seperate      on/off-switching for
+	  UDP/TCP-Requests-reports.
+
+1999-04-02 17:17  cord
+
+	* calamaris (2.23): * Copyright an Usage-Information will now also
+	  appear on STDOUT.  * added new symbolic Protocol, Content-Type
+	  and extension <secure> for	SSL-Requests.  * all
+	  INVALID_URL-Requests will now be reported as symbolic <error> in
+	  the	    TCP-Request report.  * moved Nameserverlookups back
+	  into the main loop to avoid double reportings       of Hosts,
+	  which were sometimes resolved by Squid, and sometimes not.
+	  (reported by John Line (webadm@info.cam.ac.uk))  * moved checking
+	  for -n also into the mainloop.  * moved CARP-Requests from the
+	  'FETCH from Parent Cache' to the 'HIT on	 Sibling or Parent
+	  Cache'-section of the Outgoing-request-status. (Hope	this is
+	  correct, but the Reports provided by Emmanuel Adeline
+	  (emmanuel.adeline@mail.dotcom.fr) look to me like this is the
+	  correct   section for CARP.) * the Performance-Report is now
+	  sorted correctly.  * added some &nbsp; to the HTML-Report to make
+	  the HTML-Report more readable.
+
+1999-04-02 16:59  cord
+
+	* EXAMPLES (2.4): added an Example of Matthew King.
+
+1999-02-20 20:33  cord
+
+	* calamaris (2.22): * bugfix for the old peak-calculation method.
+	  * added format-info to reports.
+
+1999-02-20 18:59  cord
+
+	* calamaris.1 (1.10): changed reference Id for Calamaris.
+
+1999-02-20 18:45  cord
+
+	* calamaris (2.21): * added new option -l (logo) for adding a
+	  customizable head to HTML-Report.  * fixed (again) a small
+	  problem with -H option.  * changed the hack to parse broken
+	  NetCache 3.2.x-Logfiles. The old hack broke	some lines if a
+	  semicolon is the last char of a field.  * all hostnames converted
+	  to lowercase. NuTsCaPe and nUtScApE as host is now   recognized
+	  as the same.	* fixed something with NetCaches ICP-Requests.	*
+	  TIMEOUT_NONE is now recognized, Calamaris doesn't complain
+	  anymore.  * added a HTML 4.0-header to the HTML-Report. (thanks
+	  to Iain Lea) * Performance-Report corrected. ICP-Request are not
+	  counted anymore.  * Fixed a Y2K-Problem :-) Y2K has been reported
+	  as 100, which is correct, but   this breaks my 80-chars
+	  text-width, and it is not that intuitive. Now Y2K   will show up
+	  as 00. (Internal I calculate all with UNIX-epoch (seconds since
+	  1.1.1970). A quick test shows that Calamaris should work 'til
+	  19.1.19^H^H2038 ;-) However: Y2K-Statement:  Calamaris comes with
+	  ABSOLUTELY   NO WARRANTY.  * added Homepage-Location to the
+	  Copyright-Footer.  * added '-- ' to seperate footer and report in
+	  Mail-reports.  * added links to the HTML-Copyright-footer.  *
+	  cleaned up (printf --> print where possible.)
+
+1999-02-20 18:12  cord
+
+	* README (2.19): moved the Common-Log-Statement from todo to
+	  bugs&shortcomings.  NetCache is now in late beta-state. Removed
+	  some warnings :-) cleaned up.
+
+1999-02-20 18:07  cord
+
+	* calamaris.1 (1.9): cleaned all up a bit (mainly in the
+	  groff-source) added new option -l
+
+1999-02-06 22:08  cord
+
+	* README (2.18), calamaris (2.20), calamaris.1 (1.8):
+	  NetCache-Support changed. removed the Support for
+	  Common-Log-style Logfiles.  added a -f-option type for the
+	  default.
+
+1999-02-04 23:39  cord
+
+	* calamaris (2.19): fixed a bug regarding old squid logfile
+	  support.
+
+1999-02-04 23:30  cord
+
+	* calamaris.1 (1.7): chnaged a few things to reflect changes of
+	  V2.19 and later.
+
+1999-02-04 23:29  cord
+
+	* calamaris (2.18): * added new -f -option for selecting input
+	  logfile format * worked on NetCache-Support, now Calamaris should
+	  understand another format.	 (untested)  * added support for
+	  pre-V1.1.beta26-Squid-Logfiles.  * changed -p -option to select
+	  between old (2.8) and new (2.16)	  peak-measurement method *
+	  removed -p -option from the -a -switch.
+
+1999-02-04 23:18  cord
+
+	* README (2.17): changed statements regarding NetCache and peak
+	  mesurement.  added Help Requests to these points.
+
+1999-02-03 23:27  cord
+
+	* README (2.16): Added pointer to the FreBSD-Calamris-Port.
+
+1999-01-22 22:06  cord
+
+	* README (2.15): added a todo.
+
+1999-01-22 22:05  cord
+
+	* calamaris (2.17): made the error message more helpful.
+
+1999-01-22 22:02  cord
+
+	* calamaris.1 (1.6): only a little reformatting.
+
+1998-12-09 23:23  cord
+
+	* README (2.14): looked through it and cleaned up again...
+
+1998-12-09 23:21  cord
+
+	* calamaris.1 (1.5): taken over the manpage... there is more work
+	  to be done...
+
+1998-12-06 17:36  cord
+
+	* README (2.13): added manpage to the installation-'manual' changed
+	  the comments on the new Squid-generation changed comments on
+	  peak-measurement added a comment about Common Logfileformat
+
+1998-12-05 15:12  cord
+
+	* calamaris (2.16): fixed small bug to handle (drop) negative
+	  reqtimes.
+
+1998-12-05 14:18  cord
+
+	* calamaris (2.15): reworked the measurement of peak-usage.
+	  Hour-data is now calculated in   hour-steps, and a throughput
+	  peak is also there. The changes make Calamaris   about 20% faster
+	  (on a 60k-line-file compared with V2.8). With bigger	 Logfiles
+	  the gain should be greater. However: The Peakmeasurement is the
+	  less efficient part of Calamaris, if you switch it off Calamaris
+	  will be 30%	(with 60k-lines) or more faster. (I'm not glad with
+	  it, maybe someone has an   idea how to build a routine which is
+	  fast AND more reliable?).
+
+	  made some changes in line-formating and some cosmetic changes in
+	  the code.
+
+	  included new adress for the Calamaris-Homepage.
+
+1998-12-05 14:07  cord
+
+	* README (2.12): Included new adress for the Calamaris-Homepage.
+
+1998-12-05 14:06  cord
+
+	* EXAMPLES (2.3): wrapped the long lines and added a warning.
+
+1998-12-05 11:42  cord
+
+	* calamaris (2.14): Added a few suggestions by Gerold Meerkoetter
+	  <gerold@noc.fh-lippe.de>
+
+1998-11-18 00:08  cord
+
+	* calamaris.1 (1.4): A manpage for Calamaris.
+
+1998-11-17 23:51  cord
+
+	* README (2.11): Fixed some faults. Thanks to gerold Meerkoetter
+	  for pointing me on them.
+
+1998-11-16 22:56  cord
+
+	* calamaris.1 (1.3): New Manpage for Calamaris Many thanks to
+	  Philipp Frauenfelder <pfrauenf@debian.org>
+
+1998-11-16 22:52  cord
+
+	* EXAMPLES (2.2), README (2.10): changed the name of calamris.pl to
+	  calamaris
+
+1998-11-16 22:44  cord
+
+	* calamaris (2.13): save the previous revisionnumbers from
+	  calamaris.pl 2.13 is the actual number of calamaris
+
+1998-11-16 22:42  cord
+
+	* calamaris (1.2), calamaris.pl (2.13): Renamed calamaris.pl to
+	  calamaris to make it more logically with the new manpage.
+
+1998-11-16 22:25  cord
+
+	* calamaris.1 (1.2): A manpage for Calamaris.  Many thanks to
+	  Philipp Frauenfelder <pfrauenf@debian.org> for it.
+
+1998-10-23 00:37  cord
+
+	* calamaris.pl (2.12): found another performance-thing... Now it is
+	  ~8% faster than 2.8 (last release)
+
+1998-10-22 21:36  cord
+
+	* calamaris.pl (2.11): moved $perf-initialisation to the TCP-Part.
+	  cleaned Calamaris up.  Calamaris is now ~5% faster, if you use
+	  '-a'
+
+1998-10-20 11:37  cord
+
+	* README (2.9), calamaris.pl (2.10): Added new switch for chnaging
+	  the sort order in reports from number of requests to size of
+	  requests.
+
+1998-10-19 00:06  cord
+
+	* README (2.8): on Squid V2.0.x: I'm still looking for a report of
+	  a CARP-User how Calamaris works for him.
+
+	  I removed the todo 'rewrite Mainloop'. I have build it in, and
+	  now the Mainloop is build first and then run. But: It doesn't
+	  work as good as i hoped.  On my measurements on my (slow) 386DX40
+	  with a very short access.log it is slower, with a longer file
+	  (60k lines) it is faster by about 2%
+
+1998-10-18 23:37  cord
+
+	* calamaris.pl (2.9): Moved logfile-parsing part into a
+	  pre-run-part.  Now the Mainloop for parsing is build before
+	  running it. Static things like switches are build in...
+
+1998-10-14 22:56  cord
+
+	* README (2.7): Added pointers for rpm and Debian-Packages
+
+1998-10-12 22:03  cord
+
+	* README (2.6), calamaris.pl (2.8): Had a better idea how to handle
+	  the broken data while showering :-) Now wrong data is printed as
+	  - in the Report.
+
+1998-10-12 21:26  cord
+
+	* calamaris.pl (2.7): fixed breaking old (buggy) cachefile. Now old
+	  and new Cachefile work without complaining... But with old
+	  cachefiles the performance-values of Cache-Hits are wrong...
+
+1998-10-12 21:22  cord
+
+	* README (2.5): added text about the Cachefile-breaking Bug.
+
+1998-10-12 20:41  cord
+
+	* calamaris.pl (2.6): found and removed no longer needed
+	  tcp_miss_neighbor-strings.  moved caching for peakvalues into the
+	  $opt_P-Option.  corrected (again) the measurement of transfered
+	  data in the Performance-Report
+
+1998-10-12 20:37  cord
+
+	* README (2.4): added a statement regarding perl 5.001
+
+1998-10-10 20:51  cord
+
+	* calamaris.pl (2.5): fixed more bugs regarding cached
+	  Performance...
+
+1998-10-10 19:16  cord
+
+	* calamaris.pl (2.4): added better handling of cached 'other'.
+
+1998-10-10 15:39  cord
+
+	* calamaris.pl (2.3): fixed bug regarding caching function.
+	  WARNING: This breaks cached Performance-data from old cachefiles.
+
+1998-10-10 15:35  cord
+
+	* README (2.3): added another todo
+
+1998-10-07 19:41  cord
+
+	* calamaris.pl (2.2): fixed bugs reported ans patched by Roar Smith
+	  <Roar.Smith@Ericsson.Dk>
+
+1998-10-07 19:40  cord
+
+	* README (2.2): added wish for switch the sorting between requests
+	  and size
+
+1998-10-05 20:50  cord
+
+	* COPYRIGHT (2.1), EXAMPLES (2.1), README (2.1), calamaris.pl
+	  (2.1): no program changes.  checked the spelling and rewrote a
+	  few parts of the README
+
+	  'official' release of Calamaris V2
+
+1998-10-03 14:33  cord
+
+	* calamaris.pl (1.125): added CACHE_DIGEST and CARP
+
+1998-09-30 19:46  cord
+
+	* README (1.5): added a sentence to 'What Is It?'
+
+1998-09-30 19:35  cord
+
+	* calamaris.pl (1.124): changed location of Calamaris-Homepage.
+	  changed adress of Announcementlist
+
+1998-09-30 19:33  cord
+
+	* README (1.4): changed location of calamaris-Homepage.  added link
+	  to the calamaris C++ port Seafood.
+
+1998-09-25 21:02  cord
+
+	* README (1.3): Cleaned up README.
+
+1998-09-24 23:56  cord
+
+	* EXAMPLES (1.2): Added Version-Information.
+
+1998-09-24 23:52  cord
+
+	* EXAMPLES (1.1): New File for Examples of calamaris usage.
+
+1998-09-24 23:39  cord
+
+	* README (1.2): Damned! CVS lost my first rewrite.  OK, so here we
+	  go again.  This is the text which was formerly at the beginning
+	  of calamaris.pl.
+
+	  Now it's more verbose, HTH
+
+1998-09-24 20:07  cord
+
+	* calamaris.pl (1.123): Fixed bug in Performancereport: Transfered
+	  Data is now real given in MBytes
+
+1998-09-23 23:03  cord
+
+	* COPYRIGHT (1.1), README (1.1), calamaris.pl (1.122): Moved
+	  READMEs out of calamaris into the New README file Added GPL-File
+
+1998-09-22 23:43  cord
+
+	* calamaris.pl (1.121): changed Performance-report: now zero-sized
+	  measures are printed as '-' instead of 0.00
+
+1998-09-21 23:29  cord
+
+	* calamaris.pl (1.120): added more usage-information.
+
+	  Hmmm... i think i'm going to wait a few weeks and then i release
+	  this as 'official' calamaris v2
+
+1998-09-21 21:14  cord
+
+	* calamaris.pl (1.119): added default-values for the -a -Option
+	  changed caching to add many cachefile at once fixed a bug in the
+	  Syntaxcheck of the input cachefiles.	removed checks for
+	  -a-option
+
+1998-09-19 00:30  cord
+
+	* calamaris.pl (1.118): changed URL for calamaris added
+	  Announcement-Mailinglist added -P-switch for measuring
+	  performance values added new report for it removed
+	  transfervariable for peakmeasurement
+
+1998-08-12 23:48  cord
+
+	* calamaris.pl (1.117): added CLOSEST_PARENT method wrote a few
+	  lines on NetCache-Support
+
+1998-08-12 23:04  cord
+
+	* calamaris.pl (1.116): changed syntaxcheck of Logfile for parsing
+	  NetCache-Logs
+
+1998-07-19 13:41  cord
+
+	* calamaris.pl (1.115): fixed small bug in hostnamelookup
+
+1998-07-18 23:52  cord
+
+	* calamaris.pl (1.114): moved DNS-Lookups from the parsing part
+	  into the output part of calamaris
+
+1998-07-09 21:56  cord
+
+	* calamaris.pl (1.113): added support for parsing NetCache-Logfiles
+	  wrote a few lines in the README-Section
+
+1998-07-09 21:04  cord
+
+	* calamaris.pl (1.112): added reporting number of unique clients.
+	  fixed small bug with
+
+1998-05-10 23:39  cord
+
+	* calamaris.pl (1.111): fixed bug in content-type-limiting
+
+1998-05-10 22:54  cord
+
+	* calamaris.pl (1.110): added 3 todos changed usage line added
+	  Content-type for HTML-Mails *urgs*
+
+1998-05-09 17:36  cord
+
+	* calamaris.pl (1.109): fixed hostname output (again) removed bogus
+	  Debug-line corrected usage line
+
+1998-04-15 23:24  cord
+
+	* calamaris.pl (1.108): added Link for jumping back to the Top in
+	  HTML-Output fixed small bug in the content-type report (other
+	  content-types) wrapped long lines where possible.
+
+1998-04-09 22:44  cord
+
+	* calamaris.pl (1.107): changed output string.
+
+1998-04-07 22:06  cord
+
+	* calamaris.pl (1.106): now report ERR_INVALID_URL correct as error
+
+1998-04-07 21:26  cord
+
+	* calamaris.pl (1.105): added Referers into HTML-Output for
+	  indocument links.
+
+1998-04-07 20:31  cord
+
+	* calamaris.pl (1.104): fixed small bug with hostname-output.
+
+1998-04-06 00:50  cord
+
+	* calamaris.pl (1.103): changed short variables back into long
+	  ones.
+
+1998-01-17 19:19  cord
+
+	* calamaris.pl (1.102): at this point i remember tht there was
+	  1.99.1.1, i put that changes in the 'official' devel branch. RCS
+	  simply fooled me ;-(
+
+	  replaced -f-option with -i and -o option moved -o-option into
+	  -H-option readded syntaxcheck of cachefiles
+
+1998-01-15 23:34  cord
+
+	* calamaris.pl (1.101): chnged behaviour of error reporting
+
+1998-01-11 22:25  cord
+
+	* calamaris.pl (1.100): This version is based on 1.99
+
+	  added -o option for defining Hostname added more TLD's with
+	  functional subdomains.
+
+1997-12-29 21:53  cord
+
+	* calamaris.pl (1.99.1.1): changed the Cachefile-Option -f to two
+	  options -i and -o added syntaxcheck to cachefileparser fixed a
+	  few bugs
+
+1997-12-28 22:51  cord
+
+	* calamaris.pl (1.99): i choose this number to give the old
+	  calamaris room to grow shorten all variables to make calamaris
+	  shorter and faster added caching of data added -z option for only
+	  parsing cached data
+
+1997-12-23 21:52  cord
+
+	* calamaris.pl (1.1): cleaned up calamaris v1 added
+	  command-line-options made peak-measurement more effective added
+	  HTML-Output-option added new reports and changed some old reports
+	  moved diverse functions into subroutines
+
+	  This is the initial revision of calamaris v2
+

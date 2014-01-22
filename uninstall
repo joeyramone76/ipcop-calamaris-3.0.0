@@ -1,0 +1,110 @@
+#!/usr/bin/perl
+#
+# This code is distributed under the terms of the GPL
+#
+# (c) 2005 marco.s
+#
+# $Id: install-calamaris-ipcop,v 1.0 2005/12/02 00:00:00 marco.s Exp $
+#
+
+$scriptpath=substr($0,0,rindex($0,"/"));
+$swroot="/var/ipcop";
+$cgibin="/home/httpd/cgi-bin";
+$apdir="/var/ipcop/proxy/calamaris";
+
+$i=1;
+
+print "\n=====================================================\n";
+print "  IPCop 1.4 Calamaris Proxy Report add-on uninstall\n";
+print "=====================================================\n\n";
+
+if (!-e "$swroot/header.pl") { die "ERROR: This system is not running IPCop.\n\n"; }
+
+if ((!-e "$cgibin/logs.cgi/calamaris.dat") || (!-d "$apdir")) { die "ERROR: Calamaris Proxy Report add-on is not installed.\n\n"; }
+
+if (!(-e "$swroot/general-functions.pl")) { die "ERROR: This system is not running IPCop 1.4.3 or higher.\n\n"; }
+
+
+print "Step $i: Removing directories\n";
+print "--------------------------------------------\n\n";
+
+print "$apdir\n";
+if (-d "$apdir") { system("rm -rf $apdir"); };
+
+print "/var/log/calamaris\n";
+if (-d "/var/log/calamaris") { system("rm -rf /var/log/calamaris"); };
+
+print "\n";
+$i++;
+
+
+print "Step $i: Removing Calamaris files\n";
+print "--------------------------------------------\n\n";
+
+print "$cgibin/logs.cgi/calamaris.dat\n";
+system("rm $cgibin/logs.cgi/calamaris.dat");
+
+print "\n";
+$i++;
+
+
+print "Step $i: Restoring system files\n";
+print "--------------------------------------------\n\n";
+
+print "Restoring language files:\n";
+
+foreach $language (<$scriptpath/langs/*>)
+{
+	undef(@calamarisstrings);
+	undef(@ipcopstrings);
+	$lastslashpos = rindex($language,"/");
+	$languagefile = substr($language,$lastslashpos+1);
+	print "$swroot/langs/$languagefile\n";
+	open(FILE,"$swroot/langs/$languagefile");
+	@calamarisstrings = <FILE>;
+	close(FILE);
+	foreach $line(@calamarisstrings)
+	{
+		if (!($line =~ /calamaris/i))
+		{
+			push(@ipcopstrings, $line);
+		}
+	}
+	open(FILE,">$swroot/langs/$languagefile");
+	print FILE @ipcopstrings;
+	close(FILE);
+
+	if (-e "$swroot/addon-lang/calamaris.$languagefile")
+	{
+		system("rm $swroot/addon-lang/calamaris.$languagefile");
+	}
+}
+
+if (-d "$swroot/addon-lang")
+{
+	print "\nRebuilding language cache\n";
+	require '/var/ipcop/lang.pl';
+	&Lang::BuildCacheLang;
+}
+
+print "\n";
+
+print "Restoring IPCop main menu\n";
+
+undef(@ipcopstrings);
+open(FILE,"$swroot/header.pl");
+@calamarisstrings = <FILE>;
+close(FILE);
+$n = 0;
+foreach $line (@calamarisstrings)
+{
+        if ((!($line =~ /modification by Calamaris/i)) && ($n == 0)) { push(@ipcopstrings, $line); }
+        if (($line =~ /modification by Calamaris/i) && ($n == 0)) { $n=1; } elsif (($line =~ /modification by Calamaris/i) && ($n == 1)) { $n=0; }
+}
+open(FILE,">$swroot/header.pl");
+flock FILE,2;
+print FILE @ipcopstrings;
+close(FILE);
+print "\n";
+
+print "\n";
