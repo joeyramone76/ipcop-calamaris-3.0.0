@@ -1,7 +1,7 @@
-ipcop-calamaris-3.0.0
-=====================
+ipcop-calamaris-3.0.0 beta
+==========================
 
-Calamaris V3 - addon for IPCOP 2.0.6
+Calamaris V3 beta - addon for IPCOP 2.0.6
 
 Calamaris v3 is a logfile parser and report generator, originally written by Marco.S http://calamaris.advproxy.net/ and distributed under the GNU Public License. This add-on integrates Calamaris into the IPCop GUI and gives you the ability to create customized, detailed, menu driven Proxy reports.
 
@@ -26,3 +26,8 @@ INSTALLATION
 - login with ssh or Putty into your IPCop box as root and chdir to /tmp/calamaris or wherever you have upload the files
 - install Calamaris addon with the command:
 -- ./install
+
+
+NOTE
+====
+Under development - actually not for production server
