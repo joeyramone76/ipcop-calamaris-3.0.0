@@ -2,11 +2,9 @@
 #
 # This code is distributed under the terms of the GPL
 #
-# (c) 2014 umberto.miceli 
-# (c) 2005-2008 marco.s http://calamaris.advproxy.net
+# (c) 2014 umberto.miceli
 #
-# $Id: install-calamaris-ipcop,v 3.0 2014/01/21 00:00:00 umberto.miceli Exp $
-#
+# $Id: uninstall-calamaris-ipcop,v 3.0 2014/01/22 00:00:00 umberto.miceli Exp $ #
 
 $scriptpath=substr($0,0,rindex($0,"/"));
 $swroot="/var/ipcop";
@@ -125,6 +123,19 @@ foreach $language (<$scriptpath/langs/*>)
 	@calamarisstrings = <FILE>;
 	close(FILE);
 	push(@calamarisstrings,");\n");
+
+#	open(FILE,"$swroot/langs/$languagefile");
+#	@ipcopstrings = <FILE>;
+#	close(FILE);
+##	do {
+#		$n=@ipcopstrings;
+#		$line=$ipcopstrings[$n-1];
+#		pop(@ipcopstrings);
+#	} until ($line =~ /\);/);
+#	push(@ipcopstrings,@calamarisstrings);
+#	open(FILE,">$swroot/langs/$languagefile");
+#	print FILE @ipcopstrings;
+#	close(FILE);
 
 	if (-d "$swroot/addons/lang")
 	{

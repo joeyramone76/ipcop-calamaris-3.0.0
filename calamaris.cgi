@@ -2,9 +2,9 @@
 #
 # This code is distributed under the terms of the GPL
 #
-# (c) 2005,2008 marco.s http://calamaris.advproxy.net
+# (c) 2014 umberto.miceli
 #
-# $Id: calamaris.dat,v 2.1 2008/03/10 00:00:00 marco.s Exp $
+# $Id: calamaris.cgi,v 3.0 2014/01/22 00:00:00 umberto.miceli Exp $
 #
 
 # Add entry in menu
