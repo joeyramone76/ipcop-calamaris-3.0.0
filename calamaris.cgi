@@ -467,7 +467,7 @@ print <<END
 <tr>
 <td align='left'>&nbsp;</td>
 <td width='33%' align='center'><input type='submit' name='ACTION' value='$Lang::tr{'calamaris create report'}' /></td>
-<td width='33%' align='right'><sup><small><a href='http://calamaris.advproxy.net' target='_blank'>Calamaris $version for IPCop</a></small></sup></td>
+<td width='33%' align='right'><sup><small><a href='http://joeyramone76.altervista.org/calamaris' target='_blank'>Calamaris $version for IPCop</a></small></sup></td>
 </tr>
 
 </table>
@@ -597,7 +597,7 @@ sub check4updates
 
 		if ($remote)
 		{
-			print $remote "GET http://calamaris.advproxy.net/version/ipcop/latest HTTP/1.0\n";
+			print $remote "GET http://joeyramone76.altervista.org/calamaris/version/ipcop/latest HTTP/1.0\n";
 			print $remote "User-Agent: Mozilla/4.0 (compatible; IPCop $General::version; $Lang::language; calamaris)\n\n";
 			while (<$remote>) { push(@response,$_); }
 			close $remote;
