@@ -89,7 +89,7 @@ $reportsettings{'BYTE_UNIT'} = 'B';
 $reportsettings{'SKIP_GZLOGS'} = 'off';
 $reportsettings{'RUN_BACKGROUND'} = 'off';
 
-&Header::getcgihash(\%reportsettings);
+&General::getcgihash(\%reportsettings);
 
 my $reportfile=$reportsettings{'REPORT'};
 
