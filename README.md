@@ -28,5 +28,6 @@ INSTALLATION
  
   ./install
 
+Download TGZ Archive and Documentation at url: http://joeyramone76.altervista.org/calamaris
 
 
