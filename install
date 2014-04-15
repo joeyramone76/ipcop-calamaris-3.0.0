@@ -4,7 +4,7 @@
 #
 # (c) 2014 umberto.miceli
 #
-# $Id: uninstall-calamaris-ipcop,v 3.0 2014/01/22 00:00:00 umberto.miceli Exp $ #
+# $Id: uninstall-calamaris-ipcop,v 3.0.1 2014/04/15 00:00:00 umberto.miceli Exp $ #
 
 $scriptpath=substr($0,0,rindex($0,"/"));
 $swroot="/var/ipcop";
@@ -16,7 +16,7 @@ $update=0;
 $i=1;
 
 print "\n===================================================\n";
-print "  IPCop 2.0.6 Calamaris Proxy Report add-on install\n";
+print "  IPCop 2.x.x Calamaris Proxy Report add-on install\n";
 print "===================================================\n\n";
 
 if (!(-e "$plroot/header.pl")) { die "ERROR: This system is not running IPCop.\n\n"; }
@@ -62,7 +62,7 @@ system("chmod 755 $cgibin/calamaris.cgi");
 
 print "$apdir/version\n";
 open FILE, ">$apdir/version";
-print FILE "3.0.0";
+print FILE "3.0.1";
 close FILE;
 
 system("touch -t 200801010000 $apdir/.up2date");

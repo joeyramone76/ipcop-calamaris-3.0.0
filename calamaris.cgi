@@ -4,7 +4,7 @@
 #
 # (c) 2014 umberto.miceli
 #
-# $Id: calamaris.cgi,v 3.0 2014/01/22 00:00:00 umberto.miceli Exp $
+# $Id: calamaris.cgi,v 3.0.1 2014/04/15 00:00:00 umberto.miceli Exp $
 #
 
 # Add entry in menu
@@ -23,13 +23,13 @@ require '/usr/lib/ipcop/general-functions.pl';
 require "/usr/lib/ipcop/lang.pl";
 require "/usr/lib/ipcop/header.pl";
 
-my $version = `cat ${General::swroot}/proxy/calamaris/version`;
-my $updflagfile = "${General::swroot}/proxy/calamaris/.up2date";
+my $version = `cat /var/ipcop/proxy/calamaris/version`;
+my $updflagfile = "/var/ipcop/proxy/calamaris/.up2date";
 
 my $unique=time;
 
 my $squidlogdir = "/var/log/squid";
-my $reportdir = "${General::swroot}/proxy/calamaris/reports";
+my $reportdir = "/var/ipcop/proxy/calamaris/reports";
 
 unless (-e $reportdir) { mkdir($reportdir) }
 
@@ -110,7 +110,7 @@ if ($reportsettings{'ACTION'} eq $Lang::tr{'calamaris create report'})
 	delete $reportsettings{'YEAR_END'};
 	delete $reportsettings{'REPORT'};
 
-	&General::writehash("${General::swroot}/proxy/calamaris/settings", \%reportsettings);
+	&General::writehash("/var/ipcop/proxy/calamaris/settings", \%reportsettings);
 
 	$reportsettings{'DAY_BEGIN'}   = $cgiparams{'DAY_BEGIN'};
 	$reportsettings{'MONTH_BEGIN'} = $cgiparams{'MONTH_BEGIN'};
@@ -180,7 +180,7 @@ if ($reportsettings{'ACTION'} eq $Lang::tr{'calamaris create report'})
 
 	if ($reportsettings{'RUN_BACKGROUND'} eq 'on') { $commandline.=" &"; }
 
-	system("${General::swroot}/proxy/calamaris/bin/mkreport $commandline")
+	system("/var/ipcop/proxy/calamaris/bin/mkreport $commandline")
 }
 
 if ($reportsettings{'ACTION'} eq $Lang::tr{'export'})
@@ -200,9 +200,9 @@ if ($reportsettings{'ACTION'} eq $Lang::tr{'export'})
 
 if ($reportsettings{'ACTION'} eq $Lang::tr{'delete'}) {	unlink("$reportdir/$reportsettings{'REPORT'}"); }
 
-if (-e "${General::swroot}/proxy/calamaris/settings")
+if (-e "/var/ipcop/proxy/calamaris/settings")
 {
-	&General::readhash("${General::swroot}/proxy/calamaris/settings", \%reportsettings);
+	&General::readhash("/var/ipcop/proxy/calamaris/settings", \%reportsettings);
 }
 
 &Header::showhttpheaders();
@@ -585,12 +585,12 @@ if (($reportsettings{'ACTION'} eq $Lang::tr{'calamaris view'}) && (-e "$reportdi
 
 sub check4updates
 {
-	if ((-e "${General::swroot}/red/active") && (-e $updflagfile) && (int(-M $updflagfile) > 7))
+	if ((-e "/var/ipcop/red/active") && (-e $updflagfile) && (int(-M $updflagfile) > 7))
 	{
 		my @response=();;
 
 		my $remote = IO::Socket::INET->new(
-			PeerHost => 'calamaris.advproxy.net',
+			PeerHost => 'joeyramone76.altervista.org',
 			PeerPort => 'http(80)',
 			Timeout  => 1
 		);
