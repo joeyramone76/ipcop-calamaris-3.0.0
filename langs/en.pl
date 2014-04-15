@@ -30,4 +30,4 @@
 'calamaris view' => 'View',
 'calamaris view report' => 'View report',
 'calamaris update notification' => 'Update notification!',
-'calamaris update information' => 'There is an updated version available for download. Visit <a href="http://calamaris.advproxy.net" target="_blank">http://calamaris.advproxy.net</a> for more information.',
+'calamaris update information' => 'There is an updated version available for download. Visit <a href="http://joeyramone76.altervista.org/calamaris" target="_blank">http://joeyramone76.altervista.org/calamaris</a> for more information.',

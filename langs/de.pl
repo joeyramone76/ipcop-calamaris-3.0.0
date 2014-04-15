@@ -30,4 +30,4 @@
 'calamaris view' => 'Anzeigen',
 'calamaris view report' => 'Bericht anzeigen',
 'calamaris update notification' => 'Update-Benachrichtigung!',
-'calamaris update information' => 'Eine aktualisierte Version steht zum Download bereit. Besuchen Sie <a href="http://calamaris.advproxy.net" target="_blank">http://calamaris.advproxy.net</a> für weitere Informationen.',
+'calamaris update information' => 'Eine aktualisierte Version steht zum Download bereit. Besuchen Sie <a href=""http://joeyramone76.altervista.org/calamaris" target="_blank">"http://joeyramone76.altervista.org/calamaris</a> für weitere Informationen.',

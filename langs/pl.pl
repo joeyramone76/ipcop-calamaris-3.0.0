@@ -30,4 +30,4 @@
 'calamaris view' => 'Podgląd',
 'calamaris view report' => 'Podgląd raportu',
 'calamaris update notification' => 'Informacja o aktualizacji!',
-'calamaris update information' => 'Dostępna jest nowa wersja Raportów Calamaris. Aby uzyskać więcej informacji odwiedź <a href="http://calamaris.advproxy.net" target="_blank">http://calamaris.advproxy.net</a>.',
+'calamaris update information' => 'Dostępna jest nowa wersja Raportów Calamaris. Aby uzyskać więcej informacji odwiedź <a href=""http://joeyramone76.altervista.org/calamaris" target="_blank">"http://joeyramone76.altervista.org/calamaris</a>.',

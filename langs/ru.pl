@@ -30,4 +30,4 @@
 'calamaris view' => 'Вид',
 'calamaris view report' => 'Посмотреть отчёт',
 'calamaris update notification' => 'Сообщение об обновлении!',
-'calamaris update information' => 'Обновлённая версия доступна для загрузки. Посетите <a href="http://calamaris.advproxy.net" target="_blank">http://calamaris.advproxy.net</a> для подробностей.',
+'calamaris update information' => 'Обновлённая версия доступна для загрузки. Посетите <a href=""http://joeyramone76.altervista.org/calamaris" target="_blank">"http://joeyramone76.altervista.org/calamaris</a> для подробностей.',
